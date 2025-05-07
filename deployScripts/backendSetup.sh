@@ -37,7 +37,7 @@ sed -i \
 echo "--- Updating application.properties ---"
 CONFIG_FILE=$HOME/Geocitizen/src/main/resources/application.properties
 
-sed -i "s|/ss_demo_1|/$DB_NAME|" $CONFIG_FILE
+sed -i "s|/ss_demo_1|/$PG_DB|" $CONFIG_FILE
 sed -i "s|db.username=.*|db.username=$PG_USER|" $CONFIG_FILE
 sed -i "s|db.password=.*|db.password=$PG_PASSWORD|" $CONFIG_FILE
 sed -i "s|username=postgres|username=$PG_USER|" $CONFIG_FILE
