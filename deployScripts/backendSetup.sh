@@ -35,6 +35,14 @@ sed -i \
   pom.xml
 
 echo "--- Updating application.properties ---"
+CONFIG_FILE=$HOME/Geocitizen/src/main/resources/application.properties
+
+sed -i "s|/ss_demo_1|/$DB_NAME|" $CONFIG_FILE
+sed -i "s|db.username=.*|db.username=$PG_USER|" $CONFIG_FILE
+sed -i "s|db.password=.*|db.password=$PG_PASSWORD|" $CONFIG_FILE
+sed -i "s|username=postgres|username=$PG_USER|" $CONFIG_FILE
+sed -i "s|password=postgres|password=$PG_PASSWORD|" $CONFIG_FILE
+
 sed -i \
   -e "s|^front\.url=http://localhost:8080/citizen/#|front.url=http://geocitizen.com:8080/citizen/#|" \
   -e "s|^front-end\.url=http://localhost:8080/citizen/|front-end.url=http://geocitizen.com:8080/citizen/|" \
