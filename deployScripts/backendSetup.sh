@@ -4,11 +4,11 @@
 set -e
 
 # Create logs directory if not exists
-mkdir -p "$HOME/Geocitizen/deployScripts/logs"
+#mkdir -p "$HOME/Geocitizen/deployScripts/logs"
 
 # Log all output and errors to a log file
-exec > >(tee -i -a "$HOME/Geocitizen/deployScripts/logs/backend_setup_$(date +'%Y%m%d_%H%M%S').log")
-exec 2>&1
+#exec > >(tee -i -a "$HOME/Geocitizen/deployScripts/logs/backend_setup_$(date +'%Y%m%d_%H%M%S').log")
+#exec 2>&1
 
 echo
 echo "----------------------------------------------------------------------------------"
@@ -20,13 +20,15 @@ cd ~/Geocitizen/
 echo "--- Updating pom.xml ---"
 sed -i \
   -e '/<repositories>/,/<\/repositories>/c\
-<repository>\
-    <id>central</id>\
-    <url>https://repo.maven.apache.org/maven2</url>\
-    <snapshots>\
-        <enabled>false</enabled>\
-    </snapshots>\
-</repository>' \
+<repositories>\isac
+        <repository>\
+            <id>central</id>\
+            <url>https://repo.maven.apache.org/maven2</url>\
+            <snapshots>\
+                <enabled>false</enabled>\
+            </snapshots>\
+        </repository>\
+<\/repositories>' \
   -e '/<distributionManagement>/,/<\/distributionManagement>/d' \
   -e 's/<artifactId>servlet-api<\/artifactId>/<artifactId>javax.servlet-api<\/artifactId>/' \
   -e 's/<springframework\.social\.facebook\.version>3\.0\.0\.M3<\/springframework\.social\.facebook\.version>/<springframework.social.facebook.version>2.0.3.RELEASE<\/springframework.social.facebook.version>/' \

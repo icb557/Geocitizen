@@ -4,13 +4,13 @@
 set -e
 
 # Log file setup
-LOG_DIR="$HOME/Geocitizen/deployScripts/logs"
-mkdir -p "$LOG_DIR"
-LOG_FILE="$LOG_DIR/tomcat_setup_$(date +'%Y%m%d_%H%M%S').log"
+#LOG_DIR="$HOME/Geocitizen/deployScripts/logs"
+#mkdir -p "$LOG_DIR"
+#LOG_FILE="$LOG_DIR/tomcat_setup_$(date +'%Y%m%d_%H%M%S').log"
 
 # Redirect all output to log file and console
-exec > >(tee -i -a "$LOG_FILE")
-exec 2>&1
+#exec > >(tee -i -a "$LOG_FILE")
+#exec 2>&1
 
 echo
 echo "----------------------------------------------------------------------------------"

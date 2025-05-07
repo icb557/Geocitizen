@@ -4,14 +4,14 @@
 set -e
 
 # Create log directory
-mkdir -p "$HOME/Geocitizen/deployScripts/logs"
+#mkdir -p "$HOME/Geocitizen/deployScripts/logs"
 
 # Set log file
-LOG_FILE="$HOME/Geocitizen/deployScripts/logs/install_packages_$(date +'%Y%m%d_%H%M%S').log"
+#LOG_FILE="$HOME/Geocitizen/deployScripts/logs/install_packages_$(date +'%Y%m%d_%H%M%S').log"
 
 # Redirect output and error to log file
-exec > >(tee -i -a "$LOG_FILE")
-exec 2>&1
+#exec > >(tee -i -a "$LOG_FILE")
+#exec 2>&1
 
 echo
 echo "------------------------------------------------------------"

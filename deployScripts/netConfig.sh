@@ -4,12 +4,12 @@
 set -e
 
 # Create log directory
-mkdir -p "$HOME/Geocitizen/deployScripts/logs"
+#mkdir -p "$HOME/Geocitizen/deployScripts/logs"
 
 # Setup logging
-LOG_FILE="$HOME/Geocitizen/deployScripts/logs/net_config_$(date +'%Y%m%d_%H%M%S').log"
-exec > >(tee -i -a "$LOG_FILE")
-exec 2>&1
+#LOG_FILE="$HOME/Geocitizen/deployScripts/logs/net_config_$(date +'%Y%m%d_%H%M%S').log"
+#exec > >(tee -i -a "$LOG_FILE")
+#exec 2>&1
 
 echo
 echo "----------------------------------------------------------------------------------"

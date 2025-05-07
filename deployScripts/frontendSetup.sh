@@ -4,12 +4,12 @@
 set -e
 
 # Create logs directory if it doesn't exist
-LOG_DIR="$HOME/Geocitizen/deployScripts/logs"
-mkdir -p "$LOG_DIR"
+#LOG_DIR="$HOME/Geocitizen/deployScripts/logs"
+#mkdir -p "$LOG_DIR"
 
 # Log output to file and terminal
-exec > >(tee -i -a "$LOG_DIR/frontend_setup_$(date +'%Y%m%d_%H%M%S').log")
-exec 2>&1
+#exec > >(tee -i -a "$LOG_DIR/frontend_setup_$(date +'%Y%m%d_%H%M%S').log")
+#exec 2>&1
 
 echo
 echo "----------------------------------------------------------------------------------"
@@ -27,7 +27,7 @@ sed -i "s/host: 'localhost'/host: 'geocitizen.com'/" config/index.js
 sed -i "s|backEndUrl = 'http://localhost:8080/citizen/'|backEndUrl = 'http://geocitizen.com:8080/citizen/'|" src/main.js
 
 echo "--- Installing npm dependencies ---"
-npm install
+sudo npm install
 
 echo "=== Front-end setup completed successfully ==="
 echo "----------------------------------------------------------------------------------"

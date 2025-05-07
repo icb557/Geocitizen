@@ -4,11 +4,11 @@
 set -e
 
 # Create directory if not exist
-mkdir -p "$HOME/Geocitizen/deployScripts/logs"
+#mkdir -p "$HOME/Geocitizen/deployScripts/logs"
 
 # Log all output
-exec > >(tee -i -a "$HOME/Geocitizen/deployScripts/logs/build_frontend.log")
-exec 2>&1
+#exec > >(tee -i -a "$HOME/Geocitizen/deployScripts/logs/build_frontend.log")
+#exec 2>&1
 
 echo
 echo "----------------------------------------------------------------------------------"
