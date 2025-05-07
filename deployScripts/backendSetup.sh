@@ -20,7 +20,7 @@ cd ~/Geocitizen/
 echo "--- Updating pom.xml ---"
 sed -i \
   -e '/<repositories>/,/<\/repositories>/c\
-<repositories>\isac
+<repositories>\
         <repository>\
             <id>central</id>\
             <url>https://repo.maven.apache.org/maven2</url>\
